@@ -1,6 +1,8 @@
 /* TODO: convert to local image */
 html {
-  background-image: url(https://cdn.shapechef.com/blog/stars.png);
+  background-image: url("assets/stars.jpg");
+  background-size: 50vmin;
+  background-repeat: repeat;
   overflow: hidden;
 }
 
@@ -16,7 +18,7 @@ html:after{
   pointer-events: none;
 }
 
-body {
+.scroll_wrapper {
   position: absolute;
   top: 100px;
   bottom: 0;
@@ -32,8 +34,8 @@ body {
   text-align-last: justify;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: 31rem;
-  padding-right: 31rem;
+  padding-left: 25vw;
+  padding-right: 25vw;
   white-space: nowrap;
 }
 
@@ -60,7 +62,7 @@ body {
   margin-top: 1rem;
   letter-spacing: normal;
   font-weight: 530;
-  font-size: 1.4em;
+  font-size: 3.6vw;
   letter-spacing: -2px;
 }
 
@@ -83,12 +85,62 @@ body {
 /* animation beginning and timing */
 #scroll_text > div {
   padding-top: 4100px;
-  animation: scroll 110s linear;
+  animation: scroll 110s 10s linear;
 }
 
+#opening {
+  color: rgb(83, 236, 250);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 4vw;
+  font-weight: 200;
+  text-align: justify;
+  width: 57%;
+  animation: fade 4s forwards;
+  opacity: 0;
+}
+
+#logo {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: shrink 14s 5s forwards;
+}
 /* Animation. (lower value = reduce scroll rate) */
 @keyframes scroll{
   to{
+    /* Magic number for scroll */
     margin-top: -3000px
+  }
+}
+
+@keyframes fade {
+  15%{
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    opacity: 1;
+    height: 150vh;
+  }
+  60%{
+    height: 5vh;
+  }
+  100%{
+    height: 0vh;
+    opacity: 0;
   }
 }
