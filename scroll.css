@@ -1,3 +1,9 @@
+/* TODO: convert to local image */
+html {
+  background-image: url(https://cdn.shapechef.com/blog/stars.png);
+  overflow: hidden;
+}
+
 html:after{
   content: '';
   position: absolute;
@@ -10,21 +16,55 @@ html:after{
   pointer-events: none;
 }
 
-body{
+body {
   position: absolute;
-  top: 0;
+  top: 100px;
   bottom: 0;
   left: 0;
   right: 0;
   transform-origin: 50%, 100%;
-  transform: perspective(300px) rotateX(20deg);
+  transform: perspective(250px) rotateX(29deg);
 }
 
-html {
-  color: yellow;
-  background: black;
+/* Handle wrapping and line characteristics */
+.line {
+  text-align: justify;
+  text-align-last: justify;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 31rem;
+  padding-right: 31rem;
+  white-space: nowrap;
 }
 
+/* deals with last line for paragraphs for forced breaks */
+.line.last {
+  text-align-last: left;
+}
+
+/* Formatting for story paragraphs */
+.paragraph {
+  margin-top: 4rem;
+}
+
+/* Episode number */
+#episode {
+  font-size: 50%;
+  margin-bottom: 0;
+}
+
+/* Episode title */
+#title {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  letter-spacing: normal;
+  font-weight: 530;
+  font-size: 1.4em;
+  letter-spacing: -2px;
+}
+
+/* Base values for font */
 #scroll_text {
   position: absolute;
   top: -3500px;
@@ -32,17 +72,23 @@ html {
   left: 0;
   right: 0;
   overflow: hidden;
-  font-size: 30px;
+  font-size: 2.6vw;
   text-align: center;
-  font-family: sans-serif;
-}
-#scroll_text > div {
-  padding-top: 3500px;
-  animation: scroll 1000s linear;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: 550;
+  letter-spacing: 7px;
 }
 
+/* animation beginning and timing */
+#scroll_text > div {
+  padding-top: 4100px;
+  animation: scroll 110s linear;
+}
+
+/* Animation. (lower value = reduce scroll rate) */
 @keyframes scroll{
   to{
-    margin-top: -50000px
+    margin-top: -3000px
   }
 }
