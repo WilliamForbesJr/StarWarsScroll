@@ -1,6 +1,6 @@
 /* TODO: convert to local image */
 html {
-  background-image: url("assets/stars.jpg");
+  background-image: url("./assets/stars.jpg");
   background-size: 50vmin;
   background-repeat: repeat;
   overflow: hidden;
